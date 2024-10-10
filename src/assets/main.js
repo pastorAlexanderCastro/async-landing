@@ -44,3 +44,5 @@ async function fetData(urlApi) {
     console.error(error);
   }
 })();
+var ghpages = require("gh-pages");
+ghpages.publish("dist", callback);
