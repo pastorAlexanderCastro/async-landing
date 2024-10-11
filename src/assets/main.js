@@ -44,5 +44,18 @@ async function fetData(urlApi) {
     console.error(error);
   }
 })();
-var ghpages = require("gh-pages");
-ghpages.publish("dist", callback);
+const ghpages = require("gh-pages");
+
+ghpages.publish(
+  "src",
+  {
+    branch: "gh-pages-nueva",
+  },
+  (err) => {
+    if (err) {
+      console.error("Error al publicar:", err);
+    } else {
+      console.log("Sitio web publicado con éxito en la rama gh-pages-nueva");
+    }
+  }
+);
